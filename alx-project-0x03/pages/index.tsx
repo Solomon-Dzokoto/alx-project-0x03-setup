@@ -1,19 +1,16 @@
-"use client"; // Required for useRouter
-import Button from "@/components/common/Button";
-import { useRouter } from "next/navigation"; // Corrected import for App Router
-import { PageRouteProps } from "@/interfaces"; // Adjusted import path
+import Button from "../components/common/Button"; // Adjusted import path
+import { useRouter } from "next/router"; // For Pages Router
+import { PageRouteProps } from "../interfaces"; // Adjusted import path
 
 export default function Home() {
   const router = useRouter()
 
-  // Imperative routing with useRouter
   const routeToNextPage  = ({ pageRoute }: PageRouteProps) => {
-    router.push(pageRoute) // Simplified for App Router
+    router.push(pageRoute);
   }
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center">
-      {/* Welcome Message */}
+    <div className="min-h-screen bg-gray-100 flex flex-col justify-center items-center text-center pt-20"> {/* Added pt-20 for header spacing */}
       <h1 className="text-4xl font-bold text-gray-800 mb-4">
         Welcome to Splash App!
       </h1>
@@ -21,8 +18,6 @@ export default function Home() {
         Your one-stop platform for everything AI you need. Start exploring by
         navigating to our features below.
       </p>
-
-      {/* Navigation Options */}
       <div className="flex gap-6">
         <Button action={() => routeToNextPage({ pageRoute: '/generate-text-ai' })} buttonLabel="Generate Text" buttonBackgroundColor="blue" />
         <Button action={() => routeToNextPage({ pageRoute: '/text-to-image'})} buttonLabel="Text to Image" buttonBackgroundColor="green" />

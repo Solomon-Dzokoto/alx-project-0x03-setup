@@ -1,8 +1,7 @@
 import Link from "next/link";
-import Button from "../common/Button";
-import { LayoutProps } from "@/interfaces"; // This was in the original, but Header doesn't use LayoutProps. Removing.
+import Button from "../common/Button"; // Adjusted import path
 
-const Header: React.FC = () => { // Header doesn't take props in the original definition.
+const Header: React.FC = () => {
   return (
     <header className="fixed w-full bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
@@ -10,7 +9,6 @@ const Header: React.FC = () => { // Header doesn't take props in the original de
           Splash App
         </Link>
 
-        {/* Button Group */}
         <div className="flex gap-4">
           <Button
             buttonLabel="Sign In"

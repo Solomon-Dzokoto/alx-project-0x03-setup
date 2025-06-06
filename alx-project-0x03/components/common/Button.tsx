@@ -1,4 +1,4 @@
-import { ButtonProps } from "@/interfaces";
+import { ButtonProps } from "../../interfaces"; // Adjusted import path
 
 const Button = ({ buttonLabel, buttonSize, buttonBackgroundColor, action }: ButtonProps) => {
 
