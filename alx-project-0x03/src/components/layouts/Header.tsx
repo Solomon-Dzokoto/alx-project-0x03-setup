@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Button from "../common/Button";
+import { LayoutProps } from "@/interfaces"; // This was in the original, but Header doesn't use LayoutProps. Removing.
 
-const Header: React.FC = () => {
+const Header: React.FC = () => { // Header doesn't take props in the original definition.
   return (
     <header className="fixed w-full bg-white shadow-md">
       <div className="container mx-auto flex justify-between items-center py-6 px-4 md:px-8">
